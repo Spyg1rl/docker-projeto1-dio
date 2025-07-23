@@ -1,9 +1,10 @@
 version: '3.9'
+
 services:
-  apache:
-    image: httpd:latest
-    container_name: my-apache-app
+  php-apache:
+    image: php:8.2-apache
+    container_name: my-php-app
     ports:
-    - '80:80'
+      - '8080:80'
     volumes:
-    - ./website:/usr/local/apache2/htdocs
+      - ./app:/var/www/html
